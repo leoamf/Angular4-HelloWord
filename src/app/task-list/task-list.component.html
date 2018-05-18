@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+</div>
+<div>
+  <input type="text" id="task" [(ngModel)]="task">
+  <button id="addList" (click)="add()">Add na lista</button>
+  {{task}}
+  <ul>
+    <li *ngFor="let item of tasks">
+      {{item}}
+    </li>
+  </ul>
+</div>
