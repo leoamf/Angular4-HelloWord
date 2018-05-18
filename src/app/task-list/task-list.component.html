@@ -5,12 +5,17 @@
   </h1>
 </div>
 <div>
-  <input type="text" id="task" [(ngModel)]="task">
+  <input type="text" placeholder="nome" id="task" [(ngModel)]="task.nome">
+  <br>
+  <input type="text" placeholder="valor" id="valor" [(ngModel)]="task.valor">
+  <br>
   <button id="addList" (click)="add()">Add na lista</button>
-  {{task}}
+  <br>
+  {{task.nome}}
   <ul>
-    <li *ngFor="let item of tasks">
-      {{item}}
+    <!--[id]="'list-' +  item.nome"-->
+    <li id="list-{{item.nome}}"  [style.color]="item.valor > 5 ? 'green' : 'red'"
+     *ngFor="let item of tasks" [innerHtml] ="item.nome + ' - ' + item.valor"> 
     </li>
   </ul>
 </div>
